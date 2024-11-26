@@ -9,4 +9,5 @@ file = STUDENT_INFO.xlsx
 read_excel(file,
 
 
-           df['freq'] = df.groupby('studentid')['studentid'].transform('count')
+           
+df['freq'] = df.groupby('NAME')['NAME'].transform('count')
