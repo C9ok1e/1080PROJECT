@@ -6,7 +6,7 @@ import openpyxl
 
 file = STUDENT_INFO.xlsx
 while true:
-           print("input 1 if sort by subject, 2 by language, 3 for both")
+           print("input 1 if sort by SUBJECT, 2 by LANGUAGE, 3 for BOTH")
            sortby = input(int("Input filter of sort :")
            if sortby == 1:
                       data = pd.read_excel(file)
