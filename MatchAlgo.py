@@ -18,6 +18,4 @@ while true:
                       print(subdata)
                                  
 
-           
-df = (df.groupby(['SUBJECT','LANGUAGE'])
 
