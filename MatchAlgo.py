@@ -13,4 +13,5 @@ read_excel(file,
 df['freq'] = df.groupby('NAME')['NAME'].transform('count')
 df_new = df.sort_values('freq')
 print("The 5 students")
+print(df_new['freq', 'NAME'])
 
