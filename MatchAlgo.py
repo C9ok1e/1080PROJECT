@@ -12,17 +12,17 @@ while exit == bool(1):
            sortby = input(int("Input filter of sort :")
            if sortby == 1 :
                       data = pd.read_excel(file)
-                      subdata = data[data['SUBJECT'] in subject]
+                      subdata = data[data['SUBJECT'] in subject.lower()]
                       # check if at least one subject is same
                       print(subdata)
            elif sortby == 2 :
                       data = pd.read_excel(file)
-                      subdata = data[data['LANGUAGE'] in language]
+                      subdata = data[data['LANGUAGE'] in language.lower()]
                       #check if at least one language is same
                       print(subdata)
            elif sortby == 3 :
                       data = pd.read_excel(file)
-                      subdata = data[data['LANGUAGE'] in language] and data[data['SUBJECT'] in subject]
+                      subdata = data[data['LANGUAGE'] in language.lower()] and data[data['SUBJECT'] in subject.lower()]
                       print(subdata)
            elif sortby == 4 :
                       exit == bool(0)
