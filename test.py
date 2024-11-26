@@ -1,1 +1,2 @@
-#test
+import sys
+print(sys.executable)
