@@ -19,10 +19,10 @@ while True:
     CHECK = input("PRESS ANY BUTTON TO START OR TYPE 'DONE' TO LEAVE：")
     if CHECK.lower() == "done":
         break
-    name.lower() = input("INPUT NAME：")
-    subject.lower() = input("INPUT SUBJECT：")
-    language.lower() = input("INPUT LANGUAGE：")
-    content.lower() = input("INPUT CONTENT：")
+    name= input("INPUT NAME：")
+    subject= input("INPUT SUBJECT：")
+    language= input("INPUT LANGUAGE：")
+    content = input("INPUT CONTENT：")
 
     data["NAME"].append(name.lower())
     data["SUBJECT"].append(subject.lower())
