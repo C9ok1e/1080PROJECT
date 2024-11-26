@@ -9,7 +9,7 @@ exit = bool(1)
 file = STUDENT_INFO.xlsx
 while exit == bool(1):
            print("input 1 if sort by SUBJECT, 2 by LANGUAGE, 3 for BOTH and 4 to EXIT")
-           sortby = input(int("Input filter of sort :")
+           sortby = input(int("Input filter of sort :"))
            if sortby == 1 :
                       data = pd.read_excel(file)
                       subdata = data[data['SUBJECT'] in subject.lower()]
