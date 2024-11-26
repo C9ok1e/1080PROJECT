@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import openpyxl
+from EXCEL.py import subject
+from EXCEL.py import language
 #pip install pandas openpyxl
 #pip nstall openpyxl
 
