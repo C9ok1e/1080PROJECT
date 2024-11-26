@@ -26,5 +26,6 @@ while exit == bool(1):
                       print(subdata)
            elif sortby == 4 :
                       exit == bool(0)
+                      exit()
            else :
                       print('error! please try again!')
