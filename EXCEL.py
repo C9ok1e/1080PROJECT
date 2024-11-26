@@ -12,17 +12,17 @@ data = {
     "CONTENT": []
 }
 
-# INPUT/入資料
-print("請輸入學生的資料，完成後輸入DONE結束。")
+# INPUT/INFO~!
+print("Please enter the student's information and enter DONE to finish.")
 
 while True:
     CHECK = input("PRESS ANY BUTTON TO START OR TYPE 'DONE' TO LEAVE：")
     if CHECK.lower() == "done":
         break
-    name = input("輸入 NAME：")
-    subject = input("輸入 SUBJECT：")
-    language = input("輸入 LANGUAGE：")
-    content = input("輸入 CONTENT：")
+    name = input("INPUT NAME：")
+    subject = input("INPUT SUBJECT：")
+    language = input("INPUT LANGUAGE：")
+    content = input("INPUT CONTENT：")
 
     data["NAME"].append(name)
     data["SUBJECT"].append(subject)
@@ -37,10 +37,10 @@ if os.path.exists(filename):
     existing_df = pd.read_excel(filename)
     combined_df = pd.concat([existing_df, new_df], ignore_index=True)
     combined_df.to_excel(filename, index=False)
-    print("數據已成功追加到現有文件。")
+    print("INFO was successfully add to the existing file.")
 else:
     if not new_df.empty:
         new_df.to_excel(filename, index=False)
-        print("數據已保存到新文件。")
+        print("INFO saved to the new file.")
     else:
-        print("未輸入任何數據，未儲存文件。")
+        print("No data entered, no data saved.")
