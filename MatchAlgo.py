@@ -10,11 +10,11 @@ while true:
            sortby = input(int("Input filter of sort :")
            if sortby == 1:
                       data = pd.read_excel(file)
-                      subdata = data[data['SUBJECT'] == ]
+                      subdata = data[data['SUBJECT'] == SUBJECT]
                       print(subdata)
            if sortby == 2:
                       data = pd.read_excel(file)
-                      subdata = data[data['SUBJECT']]
+                      subdata = data[data['LANGUAGE'] == LANGUAGE]
                       print(subdata)
                                  
 
