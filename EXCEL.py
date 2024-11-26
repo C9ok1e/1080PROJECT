@@ -16,7 +16,7 @@ data = {
 print("請輸入學生的資料，完成後輸入DONE結束。")
 
 while True:
-    CHECK = input("PRESS ANY BUTTON TO START OR TYPE 'END' TO LEAVE：")
+    CHECK = input("PRESS ANY BUTTON TO START OR TYPE 'DONE' TO LEAVE：")
     if CHECK.lower() == "done":
         break
     name = input("輸入 NAME：")
