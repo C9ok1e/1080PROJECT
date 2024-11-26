@@ -24,10 +24,10 @@ while True:
     language.lower() = input("INPUT LANGUAGE：")
     content.lower() = input("INPUT CONTENT：")
 
-    data["NAME"].append(name)
-    data["SUBJECT"].append(subject)
-    data["LANGUAGE"].append(language)
-    data["CONTENT"].append(content)
+    data["NAME"].append(name.lower())
+    data["SUBJECT"].append(subject.lower())
+    data["LANGUAGE"].append(language.lower())
+    data["CONTENT"].append(content.lower())
 
 new_df = pd.DataFrame(data)
 filename = "STUDENT_INFO.xlsx"
