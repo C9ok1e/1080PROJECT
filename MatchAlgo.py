@@ -4,9 +4,11 @@ import openpyxl
 #pip install pandas openpyxl
 #pip nstall openpyxl
 
-sortby =
+sortby1 = input(str("Input first priority of sort :")
+sortby2 = input(str("Input second priority of sort :")
 file = STUDENT_INFO.xlsx
 read_excel(file,
+
 
 
            
