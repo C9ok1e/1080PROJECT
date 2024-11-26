@@ -13,5 +13,5 @@ read_excel(file,
 
 
            
-df = (df.groupby(['Studentid','Studentname'])
+df = (df.groupby(['SUBJECT','LANGUAGE'])
 
