@@ -4,5 +4,6 @@ import openpyxl
 #pip install pandas openpyxl
 #pip nstall openpyxl
 
-file = STUDENT
-read_excel(
+sortby =
+file = STUDENT_INFO.xlsx
+read_excel(file,
