@@ -14,26 +14,26 @@ data = {
     "CONTENT": []
 }
 
-print("Welcome to the student matching system ! Please enter the student's information")
-print(f"Current time: {time.strftime("%H:%M,%b%d")}")
+print("歡迎使用學生資料匹配系統：資料輸入部分，請輸入你的個人資料")
+print(f"當前時間: {time.strftime("%H:%M,%b%d")}")
 while True:
-    CHECK = input("PRESS ANY BUTTON TO upload your profile and type 'Done' in submit：")
+    CHECK = input("按下任意按鈕開始程序，在最後輸入‘Done’上傳：")
     if CHECK.lower() == "done":
         break
 
-    name= input("INPUT NAME：").strip()
-    subject= input("INPUT SUBJECT：").strip()
-    language= input("INPUT LANGUAGE：").strip()
+    name= input("輸入你的名稱：").strip()
+    subject= input("輸入你的科目：").strip()
+    language= input("輸入你的語言：").strip()
 
     while True:
-        content = input("INPUT CONTENT (MUST BE 8 DIGITS)：").strip()
+        content = input("輸入你的電話號碼用作聯繫（8位數字）：").strip()
         if content == "":
             content = None
             break
         elif content.isdigit() and len(content) == 8:
             break
         else:
-            print("CONTENT must be exactly 8 digits or left empty. Please try again.")
+            print("你的聯繫方式需是8位數字電話號碼，請留空或再次輸入：")
     if name or subject or language or content:
         data["NAME"].append(name.upper())
         data["SUBJECT"].append(subject.upper())
@@ -41,7 +41,7 @@ while True:
         data["CONTENT"].append(content if content else None)
 
 if not any(data[key] for key in data):
-    print("No data entered, no data saved.")
+    print("未有數據輸入，項目將不會被儲存。")
 else:
     new_df = pd.DataFrame(data)
     filename = "STUDENT_INFO.xlsx"
@@ -50,40 +50,37 @@ else:
         existing_df = pd.read_excel(filename)
         combined_df = pd.concat([existing_df, new_df], ignore_index=True)
         combined_df.to_excel(filename, index=False)
-        print("INFO was successfully added to the existing file.")
+        print("你的資料已成功更新到現有數據庫。")
     else:
         new_df.to_excel(filename, index=False)
-        print("Your information was successfully saved to the system.")
+        print("你的資料已成功儲存到系統。")
 
 print(" ")
-print("Do you want to find groupmates with the system?")
-a = input("If yes, please input 'yes' to match find your group mates:")
+print("你要現在尋找你的學習夥伴嗎？")
+a = input("如有需要，請輸入’yes‘進入匹配系統")
 
 import subprocess
 print(a)
 
 if a == "yes":
 
-    part2 = "Now going to the matching system"
+    part2 = "正在連結到匹配系統"
     for i in range(4):  # Repeat 4 times to show the animation
         print(f"\r{part2}{'.' * i}", end='', flush=True)
         time.sleep(0.5)  # Pause for half a second
     print()  # Move to the next line
 
     try:
-        subprocess.run(["python", "MATCHING.py"], check=True)
+        subprocess.run(["python", "MATCHING_CHI.py"], check=True)
     except subprocess.CalledProcessError as e:
         print("Error executing the script: {e}")
 else:
-    print("Since you didn't input yes, The progress end")
-    print("Thank you for your information")
+    print("似乎你暫時不需要，程序終止。")
+    print("多謝你填寫資料到數據庫")
     file_path = "STUDENT_INFO.xlsx"
     sheet_name = "Sheet1"
     def count_rows_in_sheet(path, name):
         workbook = load_workbook(path)
         worksheet = workbook[name]
         return worksheet.max_row
-    print(f"Now we have {count_rows_in_sheet(file_path, sheet_name)} Student's data in total")
-
-
-
+    print(f"現時有 {count_rows_in_sheet(file_path, sheet_name)} 名學生的資訊")
